@@ -3,7 +3,7 @@ package fr.seni.controllers;
 
 import fr.seni.dtos.AuthRequest;
 import fr.seni.dtos.AuthResponse;
-import fr.seni.services.ServiceAuth;
+import fr.seni.services.AuthService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -12,25 +12,25 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/public")
+@RequestMapping("/api/auth")
 @RequiredArgsConstructor
 public class AuthController {
 
-    private final ServiceAuth serviceAuth;
+    private final AuthService authService;
 
     @PostMapping("/login")
     public ResponseEntity<AuthResponse> login(@RequestBody AuthRequest authRequest){
-        return ResponseEntity.ok().body(serviceAuth.login(authRequest));
+        return ResponseEntity.ok().body(authService.login(authRequest));
     }
 
     @PostMapping("/refreshToken")
     public ResponseEntity<AuthResponse> refreshToken(@RequestBody AuthRequest authRequest){
-        return ResponseEntity.ok().body(serviceAuth.refreshToken(authRequest));
+        return ResponseEntity.ok().body(authService.refreshToken(authRequest));
     }
 
     @PostMapping("/logout")
     public ResponseEntity<Void> logout(@RequestBody AuthRequest authRequest){
-        serviceAuth.logout(authRequest);
+        authService.logout(authRequest);
         return ResponseEntity.ok().build();
     }
 

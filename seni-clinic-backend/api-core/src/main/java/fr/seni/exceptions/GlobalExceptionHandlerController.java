@@ -35,6 +35,6 @@ public class GlobalExceptionHandlerController {
 
     @ExceptionHandler(Exception.class)
     public void handleException(HttpServletResponse res) throws IOException {
-        res.sendError(HttpStatus.INTERNAL_SERVER_ERROR.value(), "Internal Server Error");
+        res.sendError(HttpStatus.INTERNAL_SERVER_ERROR.value(), "Erreur interne du serveur");
     }
 }

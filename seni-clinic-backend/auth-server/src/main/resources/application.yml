@@ -3,6 +3,24 @@ spring:
     name: auth-server
   profiles:
     active: dev
+  jpa:
+    database: POSTGRESQL
+    show-sql: false
+    hibernate:
+      ddl-auto: none
+    properties:
+      hibernate:
+        temp:
+          use_jdbc_metadata_defaults: false
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+  datasource:
+    url: jdbc:postgresql://${POSTGRES_HOST:localhost}:${POSTGRES_PORT:5432}/${POSTGRES_BD:seniclinic}
+    username: postgres
+    password: postgres
+    driverClassName: org.postgresql.Driver
+  sql:
+    init:
+      platform: postgres
 eureka:
   instance:
     prefer-ip-address: true
@@ -15,11 +33,8 @@ server:
   port: 6700
 seni-app:
   keycloak:
-    admin:
-      username: ${KEYCLOAK_USERNAME:admin}
-      password: ${KEYCLOAK_PASSWORD:admin}
-      clientId: ${KEYCLOAK_CLIENT:auth_client}
-      clientSecret: ${KEYCLOAK_SECRET:NaDUCVV24i4TmQXjUrAeITMkGulyKMoN}
-    realm: ${KEYCLOAK_REALM:my-realm}
-    serverUrl: ${KEYCLOAK_HOST:http://localhost:1200/auth}
-    authBaseUrl: ${KEYCLOAK_AUTH_URL:http://localhost:1200/realms/my-realm/protocol/openid-connect}
+    realm: ${KEYCLOAK_REALM:seni_clinic}
+    clientId: ${KEYCLOAK_CLIENT:auth_client}
+    host: ${KEYCLOAK_HOST:http://localhost:1200}
+    clientSecret: ${KEYCLOAK_SECRET:6OwLXp7T7OIDp5brqVSZuh0gmFgxUtAX}
+    authBaseUrl: ${KEYCLOAK_AUTH_URL:http://localhost:1200/realms/seni_clinic/protocol/openid-connect}

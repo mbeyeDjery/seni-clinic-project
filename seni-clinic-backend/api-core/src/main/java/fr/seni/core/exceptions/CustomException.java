@@ -1,4 +1,4 @@
-package fr.seni.exceptions;
+package fr.seni.core.exceptions;
 
 
 import lombok.Getter;

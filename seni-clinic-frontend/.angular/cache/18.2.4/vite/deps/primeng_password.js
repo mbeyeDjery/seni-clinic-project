@@ -9,14 +9,14 @@ import {
   InputTextModule
 } from "./chunk-2ZNDGYMV.js";
 import {
+  NG_VALUE_ACCESSOR
+} from "./chunk-I5H65IPU.js";
+import {
   animate,
   style,
   transition,
   trigger
 } from "./chunk-ZZ2IK37T.js";
-import {
-  NG_VALUE_ACCESSOR
-} from "./chunk-I5H65IPU.js";
 import {
   ConnectedOverlayScrollHandler,
   DomHandler

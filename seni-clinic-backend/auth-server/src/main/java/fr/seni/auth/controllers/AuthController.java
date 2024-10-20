@@ -1,9 +1,9 @@
-package fr.seni.controllers;
+package fr.seni.auth.controllers;
 
 
-import fr.seni.dtos.AuthRequest;
-import fr.seni.dtos.AuthResponse;
-import fr.seni.services.AuthService;
+import fr.seni.auth.services.AuthService;
+import fr.seni.core.dtos.AuthRequest;
+import fr.seni.core.dtos.AuthResponse;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -12,26 +12,28 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/api/auth")
 @RequiredArgsConstructor
+@RequestMapping("/api")
 public class AuthController {
 
     private final AuthService authService;
 
     @PostMapping("/login")
     public ResponseEntity<AuthResponse> login(@RequestBody AuthRequest authRequest){
-        return ResponseEntity.ok().body(authService.login(authRequest));
+        return ResponseEntity.ok(authService.login(authRequest));
     }
 
-    @PostMapping("/refreshToken")
+    @PostMapping("/refresh")
     public ResponseEntity<AuthResponse> refreshToken(@RequestBody AuthRequest authRequest){
-        return ResponseEntity.ok().body(authService.refreshToken(authRequest));
+        return ResponseEntity.ok(authService.refreshToken(authRequest));
     }
 
     @PostMapping("/logout")
     public ResponseEntity<Void> logout(@RequestBody AuthRequest authRequest){
         authService.logout(authRequest);
-        return ResponseEntity.ok().build();
+        return ResponseEntity.noContent().build();
     }
-
 }
+
+
+

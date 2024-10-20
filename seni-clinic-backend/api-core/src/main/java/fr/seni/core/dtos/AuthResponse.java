@@ -1,4 +1,4 @@
-package fr.seni.dtos;
+package fr.seni.core.dtos;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Builder;

@@ -1,8 +1,7 @@
-package fr.seni.exceptions;
+package fr.seni.auth.exception;
 
-import java.io.IOException;
-import java.util.Map;
-
+import fr.seni.core.exceptions.CustomException;
+import fr.seni.core.exceptions.CustomResponseException;
 import jakarta.servlet.http.HttpServletResponse;
 import org.springframework.boot.web.error.ErrorAttributeOptions;
 import org.springframework.boot.web.servlet.error.DefaultErrorAttributes;
@@ -13,6 +12,9 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
 import org.springframework.web.context.request.WebRequest;
+
+import java.io.IOException;
+import java.util.Map;
 
 @RestControllerAdvice
 public class GlobalExceptionHandlerController {

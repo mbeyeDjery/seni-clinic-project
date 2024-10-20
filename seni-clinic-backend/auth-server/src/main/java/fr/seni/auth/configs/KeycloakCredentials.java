@@ -1,9 +1,8 @@
-package fr.seni.config;
+package fr.seni.auth.configs;
 
 
 import org.keycloak.representations.idm.CredentialRepresentation;
-
-public class Credentials {
+public class KeycloakCredentials {
 
     public static CredentialRepresentation createPasswordCredentials(String password) {
         CredentialRepresentation passwordCredentials = new CredentialRepresentation();

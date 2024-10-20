@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="JpaBuddyIdeaProjectConfig" newRepositoryParent="org.springframework.data.jpa.repository.JpaRepository">
+    <option name="defaultUnitInitialized" value="true" />
+    <option name="renamerInitialized" value="true" />
+    <option name="reverseEngineeringLastDbConnectionId" value="9a13e38a-a3ed-4296-9a35-bdd92a3b4d53__seniclinic_public" />
+    <option name="reLastEntityCreationPackage" value="seni-clinic-backend/auth-server/src/main/java/fr/seni/auth/domain" />
+  </component>
+</project>

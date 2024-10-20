@@ -23,8 +23,8 @@
 	</developers>
 	<modules>
 		<module>api-core</module>
-        <module>discovery-server</module>
-        <module>gateway-server</module>
+		<module>discovery-server</module>
+		<module>gateway-server</module>
 		<module>auth-server</module>
 	</modules>
 	<scm>
